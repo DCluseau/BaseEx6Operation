@@ -51,5 +51,18 @@ public class BaseEx6Operation {
 		System.out.println("Somme des deux nombres les plus élevés : " + ope.add(max1, max2));
 		
 		// Part 6.4
+		int[][] tabMatrix1 = {{1, 4, -9},{4, 8, 80}};
+		int[][] tabMatrix2 = {{70, 41, 4},{-50, -8, 77}};
+		/*
+		 * System.out.println(tabMatrix1[0][2]); for(int i = 0; i < tabMatrix1.length;
+		 * i++) { String display = ""; display += tabMatrix1[i]; for(int j = 0; j <
+		 * tabMatrix1[i].length; j++) { display += " " + tabMatrix1[i][j]; }
+		 * 
+		 * System.out.println(display); }
+		 */
+		Matrix matrixFinal = new Matrix(tabMatrix1, tabMatrix2);
+		matrixFinal.addMatrix();
+		matrixFinal.displayMatrix();
+		
 	}
 }
