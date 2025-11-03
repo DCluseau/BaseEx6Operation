@@ -19,10 +19,10 @@ public class Matrix {
 	 * @param tabMatrix1 : first matrix to be attributed
 	 * @param tabMatrix2 : second matrix to be attributed
 	 */
-	Matrix(int[][] tabMatrix1, int[][] tabMatrix2){
+	Matrix(int[][] tabMatrix1, int[][] tabMatrix2, int[][] finalMatrix){
 		this.tabMatrix1 = tabMatrix1;
 		this.tabMatrix2 = tabMatrix2;
-		//this.finalMatrix = tabMatrix1;
+		this.finalMatrix = finalMatrix;
 	}
 	
 	/**
@@ -37,9 +37,32 @@ public class Matrix {
 	}
 	
 	/**
-	 * Function to display the three matrix
+	 * Function to substract two matrix (tabMatrix1 and tabMatrix2) which result in another matrix (finalMatrix)
 	 */
-	public void displayMatrix() {
+	public void subMatrix() {
+		for(int i = 0; i < this.tabMatrix1.length ; i ++) {
+			for(int j = 0; j < this.tabMatrix1[i].length; j++) {
+				this.finalMatrix[i][j] = this.tabMatrix1[i][j] - this.tabMatrix2[i][j];
+			}
+		}
+	}
+	
+	/**
+	 * Function to multiply two matrix (tabMatrix1 and tabMatrix2) which result in another matrix (finalMatrix)
+	 */
+	public void mulMatrix() {
+		for(int i = 0; i < this.tabMatrix1.length ; i ++) {
+			for(int j = 0; j < this.tabMatrix1[i].length; j++) {
+				this.finalMatrix[i][j] = this.tabMatrix1[i][j] * this.tabMatrix2[i][j];
+			}
+		}
+	}
+	
+	/**
+	 * Function to display the three matrix
+	 * @param ope : operator to display
+	 */
+	public void displayMatrix(String ope) {
 		
 		for(int i = 0; i < this.tabMatrix1.length; i++) {
 			String display = "";
@@ -48,7 +71,7 @@ public class Matrix {
 			}
 			System.out.println(display);
 		}
-		System.out.println("+");
+		System.out.println(ope);
 		for(int i = 0; i < this.tabMatrix2.length; i++) {
 			String display = "";
 			for(int j = 0; j < this.tabMatrix2[i].length; j++) {
@@ -64,5 +87,6 @@ public class Matrix {
 			}
 			System.out.println(display);
 		}
+		System.out.println("-----------------");
 	}
 }
